@@ -32,7 +32,7 @@ public class UserController {
 			returnURL = "redirect:/board/list";
 		} else { // 로그인 실패
 			System.out.println("로그인 실패!");
-			returnURL = "redirect:/board/list";
+			returnURL = "redirect:/login/login";
 		}
 		return returnURL;
 	}
