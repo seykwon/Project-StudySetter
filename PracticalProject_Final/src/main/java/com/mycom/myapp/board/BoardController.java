@@ -14,10 +14,15 @@ public class BoardController {
 	@Autowired
 	BoardService boardService;
 	
+	@RequestMapping(value = "/board/majorlist", method = RequestMethod.GET)
+	public String majorBoardlist() {
+		return "index";
+	}
+	
 	@RequestMapping(value = "/board/list", method = RequestMethod.GET)
 	public String boardlist(Model model) {
 		model.addAttribute("list", boardService.getBoardList());
-		return "index";
+		return "home";
 	}
 	
 	@RequestMapping(value = "/board/add", method = RequestMethod.GET)
