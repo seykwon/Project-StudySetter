@@ -19,9 +19,13 @@ public class BoardController {
 		return "index";
 	}
 	
-	@RequestMapping(value = "/board/list", method = RequestMethod.GET)
-	public String boardlist(Model model) {
-		model.addAttribute("list", boardService.getBoardList());
+	@RequestMapping(value = "/board/list/{category}", method = RequestMethod.GET)
+	public String boardlist(@PathVariable("category") int category, Model model) {
+		model.addAttribute("list", boardService.getBoardList(category));
+		if(category==0)
+			return "home";
+		if(category==1)
+			return "home";
 		return "home";
 	}
 	
