@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
- 
-<%@page import="java.util.*"%>
+<%@
+  page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
+  page import="java.util.*"
+%>
 <%
-    request.setCharacterEncoding("UTF-8");
+  request.setCharacterEncoding("UTF-8");
 %>
    
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>StudySetter();</title>
   <meta charset="UTF-8">
@@ -111,25 +111,6 @@
     <div class="w3-container w3-display-bottomleft w3-margin-bottom">
       <button onclick="document.getElementById('id01').style.display='block'"
         class="w3-button w3-xxlarge w3-theme w3-hover-blue" title="Go To W3.CSS">StudySetter();</button>
-    </div>
-  </div>
-
-  <!-- Modal -->
-  <div id="id01" class="w3-modal">
-    <div class="w3-modal-content w3-card-4 w3-animate-top">
-      <header class="w3-container w3-blue w3-display-container">
-        <span onclick="document.getElementById('id01').style.display='none'"
-          class="w3-button w3-blue w3-display-topright"><i class="fa fa-remove"></i></span>
-        <h4>Oh snap! We just showed you a modal..</h4>
-        <h5>Because we can <i class="fa fa-smile-o"></i></h5>
-      </header>
-      <div class="w3-container">
-        <p>Cool huh? Ok, enough teasing around..</p>
-        <p>Go to our <a class="w3-text-blue" href="/w3css/default.asp">W3.CSS Tutorial</a> to learn more!</p>
-      </div>
-      <footer class="w3-container w3-blue">
-        <p>Modal footer</p>
-      </footer>
     </div>
   </div>
 
@@ -265,7 +246,7 @@
   <!-- Footer -->
   <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
     <p>If error occured Contact On</p>
-    <p>22000036@handong.edu || 22000453@handong.edu</p><br>
+    <p>22000035@handong.edu || 22000453@handong.edu</p><br>
     <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
       <span class="w3-text w3-padding w3-blue w3-hide-small">Go To Top</span>
       <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
