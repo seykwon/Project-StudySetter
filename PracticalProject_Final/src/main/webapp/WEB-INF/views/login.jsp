@@ -85,13 +85,13 @@
 		<img src="src/person.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
 	</div>
 	<!-- TODO: action page -->
-	<form class="w3-container" action="./WEB-INF/views/login.jsp" method="post">
+	<form class="w3-container" action="loginOk" method="post">
 		<div class="w3-section">
 		<div class="w3-padding-32">
 			<h5><b>Id</b></h5>
 			<input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Id" name="id" required><br>
 			<h5><b>Password</b></h5>
-			<input class="w3-input w3-border" type="text" placeholder="Enter Password" name="password" required>
+			<input class="w3-input w3-border" type="password" placeholder="Enter Password" name="password" required>
 		</div>
 		<button class="w3-button w3-block w3-blue w3-login w3-section w3-padding" type="submit">Login</button>
 		</div>

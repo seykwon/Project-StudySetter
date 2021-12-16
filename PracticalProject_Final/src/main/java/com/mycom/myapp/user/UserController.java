@@ -29,10 +29,10 @@ public class UserController {
 		if (loginvo != null) { // 로그인 성공
 			System.out.println("로그인 성공!");
 			session.setAttribute("login", loginvo);
-			returnURL = "redirect:/board/list";
+			returnURL = "redirect:/board/majorlist";
 		} else { // 로그인 실패
 			System.out.println("로그인 실패!");
-			returnURL = "redirect:/board/list";
+			returnURL = "redirect:/login/login";
 		}
 		return returnURL;
 	}
