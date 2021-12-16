@@ -4,12 +4,14 @@ public class BoardVO {
 	private int seq;
 	private int studentNum;
 	private String name;
-	private String category;
+	private int category;
+	private String studyName;
 	private String title;
 	private String content;
 	private String dueDate;
 	private String chatLink;
-	private int maxStudent;
+	private int maxPerson;
+	private String type;
 	private int cnt;
 	
 	public int getSeq() {
@@ -30,11 +32,18 @@ public class BoardVO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getCategory() {
+	public int getCategory() {
 		return category;
 	}
-	public void setCategory(String category) {
+	public void setCategory(int category) {
 		this.category = category;
+	}
+	
+	public String getStudyName() {
+		return studyName;
+	}
+	public void setStudyName(String studyName) {
+		this.studyName = studyName;
 	}
 	public String getTitle() {
 		return title;
@@ -60,11 +69,17 @@ public class BoardVO {
 	public void setChatLink(String chatLink) {
 		this.chatLink = chatLink;
 	}
-	public int getMaxStudent() {
-		return maxStudent;
+	public int getMaxPerson() {
+		return maxPerson;
 	}
-	public void setMaxStudent(int maxStudent) {
-		this.maxStudent = maxStudent;
+	public void setMaxPerson(int maxPerson) {
+		this.maxPerson = maxPerson;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
 	}
 	public int getCnt() {
 		return cnt;

@@ -1,7 +1,6 @@
-<%@
-  page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
-  page import="java.util.*"
-%>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="com.mycom.myapp.board.BoardDAO, com.mycom.myapp.board.BoardVO, java.util.*" %>
+
 <%
   request.setCharacterEncoding("UTF-8");
 %>
@@ -158,7 +157,7 @@
   <!-- Footer -->
   <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
     <p>If error occured Contact On</p>
-    <p>22000035@handong.edu || 22000453@handong.edu</p><br>
+    <p>22000036@handong.edu || 22000453@handong.edu</p><br>
 
     <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
       <span class="w3-text w3-padding w3-blue w3-hide-small">Go To Top</span>

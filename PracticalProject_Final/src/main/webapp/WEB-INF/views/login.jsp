@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/xml" prefix="c" %>
 
 <!DOCTYPE html>
 <html>
@@ -82,7 +83,7 @@
 	<div class="w3-center"><br>
 		<span onclick="document.getElementById('id01').style.display='none'"
 		class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-		<img src="src/person.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+		<img src="../img/person.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
 	</div>
 	<!-- TODO: action page -->
 	<form class="w3-container" action="loginOk" method="post">
@@ -101,7 +102,7 @@
 	<!-- Footer -->
 	<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
 	<p>If error occured Contact On</p>
-	<p>22000035@handong.edu || 22000453@handong.edu</p><br>
+	<p>22000036@handong.edu || 22000453@handong.edu</p><br>
 	<div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
 		<span class="w3-text w3-padding w3-blue w3-hide-small">Go To Top</span>
 		<a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">

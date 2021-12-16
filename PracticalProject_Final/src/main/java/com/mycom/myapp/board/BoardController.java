@@ -19,6 +19,11 @@ public class BoardController {
 		return "index";
 	}
 	
+	@RequestMapping(value = "/board/addlist", method = RequestMethod.GET)
+	public String addlist() {
+		return "board/board-template";
+	}
+	
 	@RequestMapping(value = "/board/list/{category}", method = RequestMethod.GET)
 	public String boardlist(@PathVariable("category") int category, Model model) {
 		model.addAttribute("list", boardService.getBoardList(category));
@@ -41,7 +46,7 @@ public class BoardController {
 			System.out.println("데이터 추가 실패");
 		else
 			System.out.println("데이터 추가 완료!!!");
-		return "redirect:list";
+		return "redirect:addlist";
 	}
 	
 	@RequestMapping(value = "/board/editpost/{id}", method = RequestMethod.GET)
