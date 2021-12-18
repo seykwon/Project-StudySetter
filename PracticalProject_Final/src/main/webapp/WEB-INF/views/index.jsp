@@ -105,7 +105,7 @@
 
   <!-- Image Header -->
   <div class="w3-display-container w3-animate-opacity">
-    <img src="./src/study.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
+    <img src="../img/study.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
     <div class="w3-container w3-display-bottomleft w3-margin-bottom">
       <button onclick="document.getElementById('id01').style.display='block'"
         class="w3-button w3-xxlarge w3-theme w3-hover-blue" title="Go To W3.CSS">StudySetter();</button>
@@ -197,7 +197,7 @@
         </a>
       </div>
       <div class="w3-quarter">
-        <a href="board/computer-science-and-electrical-engineering.html" >
+        <a href="list" >
           <img src="https://www.handong.edu/site/handong/res/img/sub_880-01.png" alt="Boss" style="width:70%"
             class="w3-hover-opacity">
           <h3>전산전자공학부</h3>

@@ -136,7 +136,7 @@
     
     <div class="w3-section w3-padding">
       <div class="w3-half">
-        <p class="w3-left"><b>총 인원수 : <%= u.getMaxStudent()%></b></p>
+        <p class="w3-left"><b>총 인원수 : <%= u.getMaxPerson()%></b></p>
       </div>
       <div class="w3-half">
         <p class="w3-left"><b>모집 마감일 : <%= u.getDueDate()%></b></p>
