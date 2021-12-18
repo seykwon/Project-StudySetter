@@ -19,6 +19,11 @@ public class BoardController {
 		return "index";
 	}
 	
+	@RequestMapping(value = "/board/introduction", method = RequestMethod.GET)
+	public String introduction() {
+		return "introjuction";
+	}
+	
 	@RequestMapping(value = "/board/list", method = RequestMethod.GET)
 	public String boardlist(Model model) {
 		model.addAttribute("list", boardService.getBoardList());
@@ -40,18 +45,11 @@ public class BoardController {
 		return "redirect:list";
 	}
 	
-//	@RequestMapping(value = "/board/editpost/{seq}", method = RequestMethod.GET)
-//	public String editPost(@PathVariable("seq") int seq, Model model) {
-//		BoardVO boardVO = boardService.getBoard(seq);
-//		model.addAttribute("boardVO", boardVO);
-//		return "editform";
-//	}
-	
-	@RequestMapping(value = "/board/editpost/{seq}", method = RequestMethod.GET)
-	public String editPost(@PathVariable("seq") int seq, Model model) {
-		BoardVO boardVO = boardService.getBoard(seq);
+	@RequestMapping(value = "/board/editpost/{id}", method = RequestMethod.GET)
+	public String editPost(@PathVariable("id") int id, Model model) {
+		BoardVO boardVO = boardService.getBoard(id);
 		model.addAttribute("boardVO", boardVO);
-		return "editform";
+		return "board/edit";
 	}
 	
 	@RequestMapping(value = "/board/editok", method = RequestMethod.POST)

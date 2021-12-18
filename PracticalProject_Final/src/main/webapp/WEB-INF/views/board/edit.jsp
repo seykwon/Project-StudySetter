@@ -1,5 +1,6 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="com.mycom.myapp.board.BoardDAO, com.mycom.myapp.board.BoardVO, java.util.*" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <%
   request.setCharacterEncoding("UTF-8");
@@ -99,7 +100,8 @@
   <div class="w3-container w3-padding-64 w3-center" id="board">
     <div class="w3-display-container w3-animate-opacity">
       <!-- Edit Form -->
-      <form class="w3-container w3-padding" action="/board/editpost/${u.getSeq()}" style="width:70%; margin:auto">
+      <form:form commandName="boardVO" class="w3-container w3-padding" action="../editok" method="post" style="width:70%; margin:auto">
+		<form:hidden path="seq"/>
         <div class="w3-section w3-padding">
           <h5 class="w3-text-black w3-center w3-padding">게시글 수정</h5><br>
           <label class="w3-left w3-margin-left"><b>제목</b></label>
@@ -113,7 +115,7 @@
           </div>
           <div class="col-sm-6 w3-half form-group">
             <label class="w3-left w3-margin-left"><b>작성자 학번</b></label>
-            <input class="w3-input w3-border" type="text" placeholder="${u.getStudentNum()}" name="psw" required>
+            <input class="w3-input w3-border" type="text" placeholder="${u.getStudentNum()}" name="password" required>
           </div>
         </div>
         <div class="form-group">
@@ -144,7 +146,7 @@
         <div class="w3-section w3-padding">
           <label class="w3-left w3-margin-left"><b>오픈챗 링크 </b><a href="https://fervors.tistory.com/185"
               target="_blank"> 생성방법 보러 가기</a></label>
-          <input class="w3-input w3-border" type="text" placeholder="${u.getChatLink()}" name="name"
+          <input class="w3-input w3-border" type="text" placeholder="${u.getChatLink()}" name="chatLink"
             required>
         </div>
         <div class="w3-section">
@@ -182,7 +184,7 @@
           <button class="w3-button w3-block w3-blue w3-login w3-section w3-padding" type="submit">Create
             Post</button>
         </div>
-      </form>
+      </form:form>
       <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
         <button onclick="document.getElementById('id03').style.display='none'" type="button"
           class="w3-button w3-red w3-left">Cancel</button>
