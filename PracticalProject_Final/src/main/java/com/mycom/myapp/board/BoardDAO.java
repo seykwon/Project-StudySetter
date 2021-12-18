@@ -40,8 +40,8 @@ public class BoardDAO {
 		return one;
 	}
 	
-	public List<BoardVO> getBoardList(int category){
-		List<BoardVO> list = sqlSession.selectList("Board.getBoardList", category);
+	public List<BoardVO> getBoardList(){
+		List<BoardVO> list = sqlSession.selectList("Board.getBoardList");
 		return list;
 	}
 	

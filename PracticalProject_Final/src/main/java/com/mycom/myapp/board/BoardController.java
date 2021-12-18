@@ -24,14 +24,10 @@ public class BoardController {
 		return "board/board-template";
 	}
 	
-	@RequestMapping(value = "/board/list/{category}", method = RequestMethod.GET)
-	public String boardlist(@PathVariable("category") int category, Model model) {
-		model.addAttribute("list", boardService.getBoardList(category));
-		if(category==0)
-			return "home";
-		if(category==1)
-			return "home";
-		return "home";
+	@RequestMapping(value = "/board/list", method = RequestMethod.GET)
+	public String boardlist(Model model) {
+		model.addAttribute("list", boardService.getBoardList());
+		return "board/board-template";
 	}
 	
 	@RequestMapping(value = "/board/add", method = RequestMethod.GET)

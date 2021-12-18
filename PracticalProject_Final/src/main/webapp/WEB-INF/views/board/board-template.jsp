@@ -137,7 +137,9 @@ a, p, h1, h2, h3, h5, div {
 			<a href="#"
 				onclick="document.getElementById('id02').style.display='block'"
 				class="w3-button w3-large w3-blue w3-display-bottomright">글쓰기 <i
-				class="fa fa-plus"></i></a>
+				class="fa fa-plus"></i>
+			</a>
+			
 			<!-- 글쓰기 in clicked -->
 			<div id="id02" class="w3-modal">
 				<div class="w3-modal-content w3-card-4 w3-animate-zoom"
@@ -148,6 +150,7 @@ a, p, h1, h2, h3, h5, div {
 							class="w3-button w3-xlarge w3-transparent w3-display-topright"
 							title="Close Modal">×</span>
 					</div>
+					
 					<!-- Form -->
 					<form class="w3-container w3-padding" action="addok" method="post">
 						<div class="w3-section w3-padding">
@@ -164,7 +167,7 @@ a, p, h1, h2, h3, h5, div {
 							</div>
 							<div class="col-sm-6 w3-half form-group">
 								<label class="w3-left w3-margin-left"><b>작성자 학번</b></label> <input
-									class="w3-input w3-border" type="text"
+									class="w3-input w3-border" type="number" minlength="8" maxlength="8"
 									placeholder="ex) 220XXXXX" name="studentNum" required>
 							</div>
 						</div>
@@ -248,13 +251,8 @@ a, p, h1, h2, h3, h5, div {
 		</div>
 	</div>
 
-	<!-- <div class="table-responsive w3-padding-large w3-padding-32">-->
-		<!--<%-->
-        //BoardDAO boardDAO = new BoardDAO();
-        //  List<BoardVO> list = boardDAO.getBoardList(0);
-        //  request.setAttribute("list",list);
-        <!--%>-->
-		<!-- <table class="table table-sm">
+	<div class="table-responsive w3-padding-large w3-padding-32">
+		<table class="table table-sm">
 			<thead>
 				<tr>
 					<th scope="col">#</th>
@@ -273,132 +271,117 @@ a, p, h1, h2, h3, h5, div {
 						<td>${u.getTitle()}</td>
 						<td>${u.getStudyName()}</td>
 						<td>~ ${u.getDueDate()}</td>
-						<td>${u.getMaxStudent()}</td>
+						<td>${u.getMaxPerson()}</td>
 						<td><a
 							onclick="document.getElementById('id03').style.display='block'">Edit</a></td>
-						<td><a action="/board/deleteok/${u.getSeq()}">Delete</a></td>
-
+						<td><a onclick="delete_ok(${u.getSeq()})">Delete</a></td>
 
 						<!-- Edit in clicked -->
-						<!-- <div id="id03" class="w3-modal">
-							<div class="w3-modal-content w3-card-4 w3-animate-zoom"
-								style="max-width: 80py">
-								<div class="w3-center">
-									<br> <span
-										onclick="document.getElementById('id02').style.display='none'"
-										class="w3-button w3-xlarge w3-transparent w3-display-topright"
-										title="Close Modal">×</span>
-								</div>-->
-								<!-- Edit Form -->
-								<!--<form class="w3-container w3-padding"
-									action="/board/editpost/${u.getSeq()}">
-									<div class="w3-section w3-padding">
-										<h5 class="w3-text-black w3-center w3-padding">게시글 작성</h5>
-										<br> <label class="w3-left w3-margin-left"><b>제목</b></label>
-										<form:input class="w3-input w3-border w3-margin-bottom"
-											type="text" path="title" />
-									</div>
-									<div class="w3-section">
-										<div class="col-sm-6 w3-half form-group">
-											<label class="w3-left w3-margin-left"><b>작성자 이름</b></label>
-											<form:input class="w3-input w3-border" type="text"
-												path="name" />
-										</div>
-										<div class="col-sm-6 w3-half form-group">
-											<label class="w3-left w3-margin-left"><b>작성자 학번</b></label>
-											<form:input class="w3-input w3-border" type="text"
-												path="password" />
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-sm-6 w3-half">
-											<label class="w3-left w3-margin-left"><b>학부</b></label> <select
-												class="w3-input w3-border" name="school" required>
-												<option>글로벌리더십학부
-												<option>국제어문학부
-												<option>경영경제학부
-												<option>법학부
-												<option>커뮤니케이션학부
-												<option>공간환경시스템공학부
-												<option>기계제어공학부
-												<option>콘텐츠융합디자인학부
-												<option>생명과학부
-												<option>전산전자공학부
-												<option>상담심리사회복지학부
-												<option>ICT창업학부
-												<option>창의융합교육원
-												<option>AI융합교육원
-											</select>
-										</div>
-										<div class="col-sm-6 w3-half form-group">
-											<label class="w3-left w3-margin-left"><b>스터디 이름</b></label>
-											<form:input class="w3-input w3-border" type="text"
-												path="title" />
-											<br>
-
-
-										</div>
-									</div>
-									<div class="w3-section w3-padding">
-										<label class="w3-left w3-margin-left"><b>오픈챗 링크 </b><a
-											href="https://fervors.tistory.com/185" target="_blank">
-												생성방법 보러 가기</a></label>
-										<form:input class="w3-input w3-border" type="text" path="name" />
-									</div>
-									<div class="w3-section">
-										<div class="col-sm-6 w3-half form-group">
-											<label class="w3-left w3-margin-left"><b>총 인원수</b></label>
-											<form:input class="w3-input w3-border" type="number" min="2"
-												path="maxPerson" />
-											<br>
-										</div>
-										<div class="col-sm-6 w3-half form-group">
-											<label class="w3-left w3-margin-left"><b>모집 마감일</b></label>
-											<form:input class="w3-input w3-border" type="date"
-												path="dueDate" />
-											<br>
-										</div>
-									</div>
-									<div class="w3-section w3-padding w3-left-align">
-										<label class="w3-margin-left"><b>스터디 타입 선택</b></label><br>
-										<div class="w3-section">
-											<input type="radio" name="type" checked> <label>
-												시간 정하고 모여서 공부</label><br>
-										</div>
-										<div class="w3-section">
-											<input type="radio" name="type"> <label> 한
-												사람씩 돌아가면서 내용 설명</label><br>
-										</div>
-										<div class="w3-section">
-											<input type="radio" name="type"> <label> 기타
-												(아래 스터디 설명 란에서 설명해주세요!)</label>
-										</div>
-									</div>
-									<div class="w3-section w3-padding">
-										<label class="w3-left w3-margin-left"><b>스터디 설명</b></label>
-										<form:input class="w3-input w3-border" type="text"
-											style="height: 300px;" path="content" />
-									</div>
-									<div class="w3-section w3-padding">
-										<button
-											class="w3-button w3-block w3-blue w3-login w3-section w3-padding"
-											type="submit">Create Post</button>
-									</div>
-								</form>
-								<div
-									class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-									<button
-										onclick="document.getElementById('id03').style.display='none'"
-										type="button" class="w3-button w3-red w3-left">Cancel</button>
-								</div>
-							</div>
+		                <div id="id03" class="w3-modal">
+		                  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:80py">
+		                    <div class="w3-center"><br>
+		                      <span onclick="document.getElementById('id02').style.display='none'"
+		                        class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+		                    </div>
+		                    
+		                    <!-- Edit Form -->
+		                    <form class="w3-container w3-padding" action="/board/editpost/${u.getSeq()}">
+		                      <div class="w3-section w3-padding">
+		                        <h5 class="w3-text-black w3-center w3-padding">게시글 작성</h5><br>
+		                        <label class="w3-left w3-margin-left"><b>제목</b></label>
+		                        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="${u.getTitle()}"
+		                          name="title" required>
+		                      </div>
+		                      <div class="w3-section">
+		                        <div class="col-sm-6 w3-half form-group">
+		                          <label class="w3-left w3-margin-left"><b>작성자 이름</b></label>
+		                          <input class="w3-input w3-border" type="text" placeholder="${u.getName()}" name="name" required>
+		                        </div>
+		                        <div class="col-sm-6 w3-half form-group">
+		                          <label class="w3-left w3-margin-left"><b>작성자 학번</b></label>
+		                          <input class="w3-input w3-border" type="text" placeholder="${u.getStudentNum()}" name="psw" required>
+		                        </div>
+		                      </div>
+		                      <div class="form-group">
+		                        <div class="col-sm-6 w3-half">
+		                          <label class="w3-left w3-margin-left"><b>학부</b></label>
+		                          <select class="w3-input w3-border" name="school" required>
+		                            <option>글로벌리더십학부
+		                            <option>국제어문학부
+		                            <option>경영경제학부
+		                            <option>법학부
+		                            <option>커뮤니케이션학부
+		                            <option>공간환경시스템공학부
+		                            <option>기계제어공학부
+		                            <option>콘텐츠융합디자인학부
+		                            <option>생명과학부
+		                            <option>전산전자공학부
+		                            <option>상담심리사회복지학부
+		                            <option>ICT창업학부
+		                            <option>창의융합교육원
+		                            <option>AI융합교육원
+		                          </select>
+		                        </div>
+		                        <div class="col-sm-6 w3-half form-group">
+		                          <label class="w3-left w3-margin-left"><b>스터디 이름</b></label>
+		                          <input class="w3-input w3-border" type="text" placeholder="${u.getStudyName()}" name="studyName" required><br>
+		                        </div>
+		                      </div>
+		                      <div class="w3-section w3-padding">
+		                        <label class="w3-left w3-margin-left"><b>오픈챗 링크 </b><a href="https://fervors.tistory.com/185"
+		                            target="_blank"> 생성방법 보러 가기</a></label>
+		                        <input class="w3-input w3-border" type="text" placeholder="${u.getChatLink()}" name="name"
+		                          required>
+		                      </div>
+		                      <div class="w3-section">
+		                        <div class="col-sm-6 w3-half form-group">
+		                          <label class="w3-left w3-margin-left"><b>총 인원수</b></label>
+		                          <input class="w3-input w3-border" type="number" min="2" name="maxPerson"
+		                            required><br>
+		                        </div>
+		                        <div class="col-sm-6 w3-half form-group">
+		                          <label class="w3-left w3-margin-left"><b>모집 마감일</b></label>
+		                          <input class="w3-input w3-border" type="date" name="dueDate" required><br>
+		                        </div>
+		                      </div>
+		                      <div class="w3-section w3-padding w3-left-align">
+		                        <label class="w3-margin-left"><b>스터디 타입 선택</b></label><br>
+		                        <div class="w3-section">
+		                          <input type="radio" name="type" checked>
+		                          <label> 시간 정하고 모여서 공부</label><br>
+		                        </div>
+		                        <div class="w3-section">
+		                          <input type="radio" name="type">
+		                          <label> 한 사람씩 돌아가면서 내용 설명</label><br>
+		                        </div>
+		                        <div class="w3-section">
+		                          <input type="radio" name="type">
+		                          <label> 기타 (아래 스터디 설명 란에서 설명해주세요!)</label>
+		                        </div>
+		                      </div>
+		                      <div class="w3-section w3-padding">
+		                        <label class="w3-left w3-margin-left"><b>스터디 설명</b></label>
+		                        <input class="w3-input w3-border" type="text" style="height: 300px;" placeholder="${u.getContent()}"
+		                          name="content" required>
+		                      </div>
+		                      <div class="w3-section w3-padding">
+		                        <button class="w3-button w3-block w3-blue w3-login w3-section w3-padding" type="submit">Create
+		                          Post</button>
+		                      </div>
+		                    </form>
+		                    <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+		                      <button onclick="document.getElementById('id03').style.display='none'" type="button"
+		                        class="w3-button w3-red w3-left">Cancel</button>
+		                    </div>
+		                  </div>
 						</div>
+					  </div>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
-	-->
+	
 
 	<!-- Footer -->
 	<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
@@ -440,7 +423,7 @@ a, p, h1, h2, h3, h5, div {
 
       function delete_ok(id){
         var a = confirm("정말로 삭제하겠습니까?");
-        if(a) location.href='deletepost.jsp?id=' + id;
+        if(a) location.href='/board/deleteok/' + id;
       }
     </script>
 </body>
