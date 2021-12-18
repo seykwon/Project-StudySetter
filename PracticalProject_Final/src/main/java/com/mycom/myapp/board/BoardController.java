@@ -19,11 +19,6 @@ public class BoardController {
 		return "index";
 	}
 	
-	@RequestMapping(value = "/board/addlist", method = RequestMethod.GET)
-	public String addlist() {
-		return "board/board-template";
-	}
-	
 	@RequestMapping(value = "/board/list", method = RequestMethod.GET)
 	public String boardlist(Model model) {
 		model.addAttribute("list", boardService.getBoardList());
@@ -42,12 +37,19 @@ public class BoardController {
 			System.out.println("데이터 추가 실패");
 		else
 			System.out.println("데이터 추가 완료!!!");
-		return "redirect:addlist";
+		return "redirect:list";
 	}
 	
-	@RequestMapping(value = "/board/editpost/{id}", method = RequestMethod.GET)
-	public String editPost(@PathVariable("id") int id, Model model) {
-		BoardVO boardVO = boardService.getBoard(id);
+//	@RequestMapping(value = "/board/editpost/{seq}", method = RequestMethod.GET)
+//	public String editPost(@PathVariable("seq") int seq, Model model) {
+//		BoardVO boardVO = boardService.getBoard(seq);
+//		model.addAttribute("boardVO", boardVO);
+//		return "editform";
+//	}
+	
+	@RequestMapping(value = "/board/editpost/{seq}", method = RequestMethod.GET)
+	public String editPost(@PathVariable("seq") int seq, Model model) {
+		BoardVO boardVO = boardService.getBoard(seq);
 		model.addAttribute("boardVO", boardVO);
 		return "editform";
 	}

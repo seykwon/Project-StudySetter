@@ -420,7 +420,7 @@ a, p, h1, h2, h3, h5, div {
           x.className = x.className.replace(" w3-show", "");
         }
       }
-
+      
       function delete_ok(id){
         var a = confirm("정말로 삭제하겠습니까?");
         if(a) location.href="deleteok/" + id;
