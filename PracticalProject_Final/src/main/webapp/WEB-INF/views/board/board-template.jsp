@@ -273,7 +273,7 @@ a, p, h1, h2, h3, h5, div {
 						<td>~ ${u.getDueDate()}</td>
 						<td>${u.getMaxPerson()}</td>
 						<td><a
-							href="edit.jsp">Edit</a></td>
+							href="editpost/${u.seq}">Edit</a></td>
 						<td><a onclick="delete_ok(${u.getSeq()})">Delete</a></td>
 					  </div>
 					</tr>
